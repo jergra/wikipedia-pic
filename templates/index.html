@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Picture of the Day</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="card">
+      <div class="potd">
+        <div style="display: flex; justify-content: center;">
+          <div>
+            <a href="{{ data.image_page_url }}" target="blank">
+            <figure>
+              <img src="{{ data.image_src }}" />
+              <figcaption>View on Wikipedia</figcaption>
+            </figure>
+            </a>
+          </div>
+          <div class="rightSide">
+            <div>
+              <h2>{{ data.filename }}</h2>
+            </div>
+            <div class="caption">
+              {{ data.caption }}
+            </div>
+            <div class="date-container">
+              <div class="current-date">Wikipedia</div>
+              <div class="current-date">Picture-of-the-day</div>
+              <div class="current-date" style="margin-top: 20px;">
+                <time>{{ data.date.strftime("%d %B %Y") }}</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    <!-- <div class="footer">
+      <a href="https://github.com/wikimedia/mediawiki-api-demos/tree/master/apps/picture-of-the-day-viewer">
+      <p>View source on GitHub</p>
+      </a>
+    </div> -->
+  </main>
+</body>
+
+
+<!-- <div class="date-navigator">
+                 Change action url from / to /toolname/ for deployment in Toolforge 
+                <form action="/" method="POST">
+                  {% if data.date.strftime("%d %B %Y") == "14 May 2004" %}
+                  <input type="submit" name="change_date" value="← Back">
+                  {% else %}
+                  <input type="submit" name="change_date" value="← Back">
+                  {% endif %}
+                  {% if data.date == data.date.today() %}
+                  <input type="submit" name="change_date" value="Next →">
+                  {% else %}
+                  <input type="submit" name="change_date" value="Next →">
+                  {% endif %}
+                </form>
+              </div> -->
