@@ -18,9 +18,9 @@ APP = Flask(__name__)
 SESSION = requests.Session()
 ENDPOINT = "https://en.wikipedia.org/w/api.php"
 
-CURRENT_DATETIME3 = datetime.today() + timedelta(hours=12)
+CURRENT_DATETIME3 = datetime.today() + timedelta(hours=0)
 print("CURRENT_DATETIME3:", CURRENT_DATETIME3)
-CURRENT_DATE3 = date.today() + timedelta(hours=12)
+CURRENT_DATE3 = date.today() + timedelta(hours=0)
 print("CURRENT_DATE3:", CURRENT_DATE3)
 print("CURRENT_DATETIME3.date():", CURRENT_DATETIME3.date())
 
