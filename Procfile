@@ -1,1 +1,1 @@
-web: gunicorn wikipedia-pic:app
+web: gunicorn app:app
