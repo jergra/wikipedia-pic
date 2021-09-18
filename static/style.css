@@ -39,7 +39,9 @@ p {
 }
 
 .card {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: auto;
     min-width: 200px;
     max-width: 100vw;
@@ -50,8 +52,8 @@ p {
 }
 
 .potd {
-    width: inherit;
     padding: 20px;
+
 }
 
 figure {
@@ -75,26 +77,25 @@ figure a {
 .rightSide {
     display: flex; 
     flex-direction: column;
+    padding-top: 20px;
     padding-left: 60px;
     margin-right: 40px;
 }
 
 .caption {
-    width: 370px;
-    height: 350px;
+    width: 400px;
+    height: 300px;
     font-size: 18px;
     margin-top: 40px;
 }
 
 .date-container {
-    width: 350px;
-    height: 200px;
-    font-weight: bold;
-    text-align: center;
+    width: 450px;
 }
 
 .current-date {
-    margin: 0 auto;
+    width: 500px;
+    height: 60px;
     font-size: 2em;
     color: #72777d; /* grey */
 }

@@ -39,6 +39,6 @@ to update:
     git add .
     git commit -m "message"
     git push
-    go to heroku dashboard, under 'Deploy',
+    go to heroku dashboard, select wikipedia-pic, under 'Deploy',
         bottom of page, click 'Deploy Branch'
 
