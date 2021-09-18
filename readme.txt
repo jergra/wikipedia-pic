@@ -36,6 +36,7 @@ deployed at:
     https://wikipedia-pic.herokuapp.
     
 to update:
+    activate virtual environment: ./my_venv/Scripts/activate
     git add .
     git commit -m "message"
     git push

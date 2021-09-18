@@ -18,9 +18,9 @@ APP = Flask(__name__)
 SESSION = requests.Session()
 ENDPOINT = "https://en.wikipedia.org/w/api.php"
 
-CURRENT_DATETIME3 = datetime.today() + timedelta(hours=0)
+CURRENT_DATETIME3 = datetime.today() + timedelta(hours=5)
 print("CURRENT_DATETIME3:", CURRENT_DATETIME3)
-CURRENT_DATE3 = date.today() + timedelta(hours=0)
+CURRENT_DATE3 = date.today() + timedelta(hours=5)
 print("CURRENT_DATE3:", CURRENT_DATE3)
 print("CURRENT_DATETIME3.date():", CURRENT_DATETIME3.date())
 
@@ -78,11 +78,11 @@ def fetch_potd(cur_date):
     DATA = R.json()
     theData = DATA["parse"]["text"]["*"]
     print("THE_DATA:", theData)
-    a = theData.find('<td style="padding:0 6px 0 0">')
-    b = theData.find('<p style="text-align:left;">')
+    a = theData.find('<td style="padding:0 ')
+    b = theData.find('<p style="text-align:')
     print("a:", a)
     print("b:", b)
-    c = theData[a:b]
+    c = theData[a + 46:b]
     print("THE_DATA from a to b:", c)
     
     soup = BeautifulSoup(c)
