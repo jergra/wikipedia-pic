@@ -7,8 +7,6 @@
 
     MIT License
 """
-import json
-from bs4 import BeautifulSoup
 from datetime import date, timedelta, datetime
 from flask import Flask, render_template, request
 import requests
@@ -78,17 +76,16 @@ def fetch_potd(cur_date):
     DATA = R.json()
     theData = DATA["parse"]["text"]["*"]
     print("THE_DATA:", theData)
-    a = theData.find('<td style="padding:0 ')
+    a = theData.find('<p><b>')
     b = theData.find('<p style="text-align:')
     print("a:", a)
     print("b:", b)
-    c = theData[a + 46:b]
-    print("THE_DATA from a to b:", c)
+    c = theData[a:b]
+    print("------------------------------")
+    print("THE_DATA from a to b:")
+    print(c)
+    print("------------------------------")
     
-    soup = BeautifulSoup(c)
-    caption = soup.get_text()
-    print("CAPTION:", caption)
-
     g = theData.find('1.5x, //upload')
     h = theData.find(' 2x" data')
     print("g:", g)
@@ -110,7 +107,7 @@ def fetch_potd(cur_date):
         "image_src": 'https://' + i,
         "image_page_url": 'https://en.wikipedia.org/wiki/Template:POTD_protected/' + cur_dateString,
         "date": cur_date,
-        "caption": caption
+        "caption": c
     }
 
     return image_data
