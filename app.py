@@ -76,11 +76,11 @@ def fetch_potd(cur_date):
     DATA = R.json()
     theData = DATA["parse"]["text"]["*"]
     print("THE_DATA:", theData)
-    a = theData.find('<p><b>')
+    a = theData.find('0">\n<p>')
     b = theData.find('<p style="text-align:')
     print("a:", a)
     print("b:", b)
-    c = theData[a:b]
+    c = theData[a + 3:b]
     print("------------------------------")
     print("THE_DATA from a to b:")
     print(c)

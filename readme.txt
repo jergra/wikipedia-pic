@@ -18,12 +18,10 @@ there, I found a tutorial with python and flask code to
 build a 'Picture of the day viewer'. Since this only
 retrieved the picture and not the caption, I took another
 approach and found scraping code which I used to 
-scrape wikipedia's stand-alone page. The caption's
-html code was removed using BeautifulSoup.
+scrape wikipedia's stand-alone page.
 
 The only advantage of this project over wikipedia's page is that 
-the picture is larger. The disadvantage is that, because of the 
-BeautifulSoup, links within the caption are gone.
+the picture is larger.
 
 
 to activate the virtual environment, type:
