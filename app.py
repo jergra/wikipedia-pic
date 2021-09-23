@@ -64,6 +64,26 @@ def change_date():
 
 
 def fetch_potd(cur_date):
+
+
+
+
+    date_iso = cur_date.isoformat()
+    title = "Template:POTD protected/" + date_iso
+    params = {
+        "action": "query",
+        "format": "json",
+        "formatversion": "2",
+        "prop": "images",
+        "titles": title
+    }
+    response = SESSION.get(url=ENDPOINT, params=params)
+    data = response.json()
+    filename = data["query"]["pages"][0]["images"][0]["title"]
+    
+
+
+
     cur_dateString = str(cur_date)
     S = requests.Session()
     URL = "https://en.wikipedia.org/w/api.php"
@@ -100,10 +120,15 @@ def fetch_potd(cur_date):
     print("k:", k)
     m = theData[j + 17:k - 5]
     print("THE_DATA from j to k:", m)
-    print("FILENAME:", m)
+    
+    print("FILENAME1:", m)
+    print("FILENAME2:", filename)
+    croppedFilename = filename[5:-4]
+    print("croppedFILENAME2:", croppedFilename)
 
     image_data = {
-        "filename": m,
+        # "filename": m,
+        "filename": croppedFilename,
         "image_src": 'https://' + i,
         "image_page_url": 'https://en.wikipedia.org/wiki/Template:POTD_protected/' + cur_dateString,
         "date": cur_date,

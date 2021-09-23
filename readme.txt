@@ -28,6 +28,7 @@ to activate the virtual environment, type:
     ./my_venv/Scripts/activate
 
 start locally:
+    activate virtual environment: ./my_venv/Scripts/activate
     python app.py
 
 deployed at:
