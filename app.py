@@ -104,6 +104,9 @@ def fetch_potd(cur_date):
     print("------------------------------")
     print("THE_DATA from a to b:")
     print(c)
+    c = c.replace('href="', 'href="https://en.wikipedia.org')
+    print("------------------------------")
+    print(c)
     print("------------------------------")
     
     g = theData.find('1.5x, //upload')
