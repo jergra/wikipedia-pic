@@ -33,6 +33,11 @@ h2 {
 a {
     color: #3366cc; /* blue */
 }
+a:link {
+    text-decoration: none;
+}
+  
+
 
 p {
     margin: 8px;
